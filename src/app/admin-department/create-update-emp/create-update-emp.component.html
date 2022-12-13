@@ -1,0 +1,106 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+    <div class="form-froup row" style="width: 60%;">
+    
+        <label class="col-sm-2 col-form-label">Employee Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="emp_name"
+            placeholder="Enter Employee Name">
+        </div>
+
+        <label class="col-sm-2 col-form-label">Email ID</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" [(ngModel)]="email"
+            placeholder="Enter Email ID">
+        </div>
+
+        <label class="col-sm-2 col-form-label mb-3">Contact Number</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control mt-3" [(ngModel)]="contact_Number"
+            placeholder="Enter contact number ">
+        </div>
+
+        <label class="col-sm-2 col-form-label">Emergency Contact</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" [(ngModel)]="emergency_Contact_Number"
+            placeholder="Enter emergency contact">
+        </div>
+
+        <label class="col-sm-2 col-form-label">ADDRESS </label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="address"
+            placeholder="Enter Address">
+        </div>
+
+        <label class="col-sm-2 col-form-label mt-3">Designation</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control mt-3" [(ngModel)]="position"
+            placeholder="Enter the Designation">
+        </div>
+
+        <label class="col-sm-2 col-form-label mt-3">Date of Birth</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control mt-3" [(ngModel)]="dob">
+        </div>
+
+        <label class="col-sm-2 col-form-label ">martial_Status</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="martial_Status"
+            placeholder="Enter marital status">
+            <!-- <select id="cars" [(ngModel)]="martial_Status">
+                <option ng-model="Employee." value="SINGLE">Single</option>
+                <option value="MARRIED">Married</option>
+                <option value="DIVORCED">Divorced</option>
+               
+              </select> -->
+        </div>
+
+        <label class="col-sm-2 col-form-label mt-3"> Blood_Group</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control mt-3" [(ngModel)]="Blood_Group"
+            placeholder="Enter Blood group">
+        </div>
+
+        <label class="col-sm-2 col-form-label mt-3">job_Title</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control mt-3" [(ngModel)]="job_Title"
+            placeholder="Enter Job Title">
+        </div>
+
+        <label class="col-sm-2 col-form-label mt-3">work_Location</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control mt-3" [(ngModel)]="work_Location"
+            placeholder="Enter Work Location">
+        </div>
+    
+       
+        <label class="col-sm-2 col-form-label mt-3">Date of joining</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control mt-3" [(ngModel)]="date_Of_Joining">
+        </div>
+
+        <label class="col-sm-2 col-form-label ">Reporting_To</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control " [(ngModel)]="reporting_To">
+        </div>
+
+        <label class="col-sm-2 col-form-label mt-3">linkedin_Link</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control mt-3" [(ngModel)]="linkedin_Link"  placeholder="Enter linkedin link">
+        </div>
+    
+    </div>
+    <div class="ml-3 bd-highlight" style="width: 40%;">
+    <img [src]=PhotoFilePath height="250px;" width="200px;">
+    <input type="file" (change)="uploadPhoto($event)" class="mt-2"/>
+    </div>
+    </div>
+    
+    
+    <button (click)="addEmployee()" *ngIf="emp.emp_id==0" class="btn btn-primary">
+        Add
+    </button>
+    
+    <button (click)="updateEmployee()" *ngIf="emp.emp_id!=0" class="btn btn-primary">
+        Update
+    </button>

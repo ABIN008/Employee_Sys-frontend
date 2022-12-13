@@ -1,0 +1,68 @@
+<app-admin-header></app-admin-header>
+<div class="col cola">
+    <div class="text-center">
+      <h4>LEAVE DETAILS</h4>
+    </div>
+   
+     <div class="col">
+      <input [(ngModel)]="filter" class="form-control" style="width: 90%;"
+          (keyup)="FilterFn()" placeholder="Filter by nature of leave ">
+      
+          <button type="button" class="btn btn-light srtbtn"
+          (click)="sortResult('nature_of_leave',true)">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 5a.5.5 0 0 0-1 0v4.793L5.354 7.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 9.793V5z"/>
+          </svg>
+        </button>
+        <button type="button" class="btn btn-light srtbtn"
+          (click)="sortResult('nature_of_leave',false)">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+          </svg>
+        </button>
+     
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success shbtn" type="submit">Search</button>
+      -->
+        
+        
+     </div>
+  
+  </div>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            
+            <th>Employee Name</th>
+            <th>Apply Date</th>
+            <th>Nature of Leave</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>No. of Days</th>
+            <!-- <th>Status</th> -->
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of LeaveList">
+            <td>{{dataItem.user}}</td>
+            <td>{{dataItem.apply_date}}</td>
+            <td>{{dataItem.nature_of_leave}}</td>
+            <td>{{dataItem.first_Day}}</td>
+            <td>{{dataItem.last_Day}}</td>
+            <td>{{dataItem.number_Of_Days}}</td>
+            <td><button type="button" (click)="cancelleave(dataItem)" class="btn btn-secondary">Cancel</button>
+                <button type="button" (click)="approveleave(dataItem)" class="btn btn-success" style="margin-left: 5px;">Approve</button></td>
+            <td>
+
+
+
+
+
+               
+            </td>
+        </tr>
+    </tbody>
+</table>
